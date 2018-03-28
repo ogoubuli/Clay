@@ -23,18 +23,19 @@ var toggleableLayerIds = [ 'bpro', 'bppro', 'bp', 'bo', 'kp', 'kppro', 'kpro', '
 for (var i = 0; i < toggleableLayerIds.length; i++) {
     var id = toggleableLayerIds[i];
 
-    var link = document.createElement('a');
-    link.href = '#';
-    link.className = 'active';
-    link.textContent = id;
+    // var link = document.createElement('a');
+    // link.href = '#';
+    // link.className = 'active';
+    // link.textContent = id;
 
-   map.on('click', function(e) {
+   $("a.toggle").on('click', function(e) {
        var clayTypes = map.queryRenderedFeatures(e.point, {
         layers: ['bpro', 'bppro', 'bp', 'bo', 'kp', 'kppro', 'kpro', 'ko']
        })
 
-       var clickedLayer = clayTypes.layerid
-
+       // var clickedLayer = clayTypes.layer.id
+       var clickedLayer = e.target.id;
+       
         var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
 
         if (visibility === 'visible') {
@@ -46,8 +47,6 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
         }
     });
 
-    var layers = document.getElementById('menu');
-    layers.appendChild(link);
 }
 
     // code to add popups
@@ -63,7 +62,7 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
       }
 
       // Sets the current feature equal to the clicked-on feature using array notation, in which the first item in the array is selected using arrayName[0]. The event listener above ("var stops = map...") returns an array of clicked-on bus stops, and even though the array might only have one item, we need to isolate it by using array notation as follows below.
-      var clayType = soilTypes[0];
+      var clayType = clayTypes[0];
       
       // Initiate the popup
       var popup = new mapboxgl.Popup({ 
@@ -74,12 +73,12 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
       });
 
       // Set the popup location based on each feature
-      popup.setLngLat(soilType.geometry.coordinates);
+      popup.setLngLat(clayType.geometry.coordinates);
 
       // Set the contents of the popup window
-      for (i=0; i<soilTypes.properties.name.length; i++) {
+      for (i=0; i<clayTypes.properties.name.length; i++) {
 
-        clayType = soilTypes.properties.name[i];
+        clayType = clayTypes.properties.name[i];
 
        
           popup.setHTML('<h3>Company Name: ' + clayType.properties.SITE_NAME   // 'stop_id' field of the dataset will become the title of the popup
