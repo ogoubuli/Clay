@@ -44,7 +44,7 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
             this.className = 'active';
             map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
         }
-    };
+    });
 
     var layers = document.getElementById('menu');
     layers.appendChild(link);
