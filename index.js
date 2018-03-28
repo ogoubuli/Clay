@@ -19,7 +19,6 @@ var map = new mapboxgl.Map({
 
 //show and hide layers
 var toggleableLayerIds = [ 'bpro', 'bppro', 'bp', 'bo', 'kp', 'kppro', 'kpro', 'ko'];
-//how can I group 3 layers with the same ID?
 for (var i = 0; i < toggleableLayerIds.length; i++) {
     var id = toggleableLayerIds[i];
 
@@ -35,7 +34,7 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
 
        // var clickedLayer = clayTypes.layer.id
        var clickedLayer = e.target.id;
-       
+
         var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
 
         if (visibility === 'visible') {

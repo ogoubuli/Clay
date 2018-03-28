@@ -33,9 +33,12 @@ p {
 	line-height: 150%;
 	color: #666666;
 }
+/*linke style*/
 
-#active {
-	background-color: #3887be;
+#ClayType {
+	background-color: #3887be; 
 	color:#ffffff;
+	/*to make a padding area around the text, change color when clicked or hovered*/
 }
+
 
