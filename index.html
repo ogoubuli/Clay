@@ -1,0 +1,68 @@
+<!-- This is a comment -->
+
+<html>
+<head>
+<title>Clay Resources</title>
+	<!-- Link to JQuery library (used for modal) -->	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+	<!-- Link to Mapbox GL JS library -->	
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
+
+	<!-- Link to Mapbox GL JS css stylesheet -->	
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css' rel='stylesheet' />
+
+	<!-- Link to our custom stylesheet -->	
+	<link rel="stylesheet" href="index.css">
+</head>
+
+
+
+<body>
+    
+<div class="Content" ng-app="index" ng-controller="AppCtrl" style="height: 277px; font-family: sans-serif">
+    <div class="Title">
+        <div class="logo">
+            <span style="color: black">Clay</span>
+            <span style="color: grey">Material Investigation</span>
+         </div>
+        <div id="ClayType">
+            <div id="TypeName">Bentonite</div>
+                <a href = "#" class = "active">Producer</a>
+                <!-- #: the anchor tag is a hyperlink, but does not go anywhere -->
+                <a href="#" class = "active"> Past Producer</a>
+                <a href="#" class = "active"> Prospect</a>
+                <a href="#" class = "active"> Occurrene</a>
+            </div>
+
+           <div id="TypeName">Kaolin</div>
+                <a href = "#" class = "active">Producer</a>
+                <!-- #: the anchor tag is a hyperlink, but does not go anywhere -->
+                <a href="#" class = "active"> Past Producer</a>
+                <a href="#" class = "active"> Prospect</a>
+                <a href="#" class = "active"> Occurrene</a>
+            </div>
+
+            <div class="arrow">
+            <img src="img/arrows.png">
+            </div>
+        </div>
+        <!-- <div id="Status">
+            <div id="Status">All</div>
+            <div class="arrow">
+            <img src="img/arrows.png">
+            </div>
+        </div> --> 
+        <!-- The category is not what I expact, a little overlapping  -->
+        
+    </div>
+    <div id="map-container">
+	<div id="map"></div>
+</div>
+</div>	
+
+</body>
+
+<!-- Custom Javascript -->
+<script src="index.js"></script>
+</html>
