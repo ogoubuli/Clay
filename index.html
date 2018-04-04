@@ -2,52 +2,69 @@
 
 <html>
 <head>
-<title>Clay Resources</title>
-	<!-- Link to JQuery library (used for modal) -->	
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <title>Clay Resources</title>
+    <!-- Link to JQuery library (used for modal) -->	
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-	<!-- Link to Mapbox GL JS library -->	
-	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
+    <!-- Link to Mapbox GL JS library -->	
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
 
-	<!-- Link to Mapbox GL JS css stylesheet -->	
-	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Link to Mapbox GL JS css stylesheet -->	
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css' rel='stylesheet' />
 
-	<!-- Link to our custom stylesheet -->	
-	<link rel="stylesheet" href="index.css">
+    <!-- Link to our custom stylesheet -->	
+    <link rel="stylesheet" href="index.css">
 </head>
 
 
 
 <body>
-    
-<div class="Content" ng-app="index" ng-controller="AppCtrl" style="font-family: sans-serif">
-    <div class="Title">
-        <div class="logo">
-            <span style="color: black">Clay</span>
-            <span style="color: grey">Material Investigation</span>
-         </div>
-     </div>
 
-    <div class = "options" id="ClayType">
-         <div class="TypeName">Bentonite</div>
-         <a href = "#" id="bpro" class = "active toggle"><img src ="symbols/bpro.svg">Producer</a>
-            <a href="#" id="bppro" class = "active toggle"> <img src ="symbols/bppro.svg">Past Producer</a>
-            <a href="#" id="bp" class = "active toggle"><img src ="symbols/bp.svg"> Prospect</a>
-            <a href="#" id="bo" class = "active toggle"><img src ="symbols/bo.svg"> Occurrene</a>
-        <!-- Create a style to seperate the title and options, style for padding areas, and color change for hover and click, add simyble with different ids -->
-
-            <div class="options">Kaolin</div>
-
-                <a href = "#" id="kpro" class = "active toggle"><img src ="symbols/kpro.svg">Producer</a>
-                <!-- #: the anchor tag is a hyperlink, but does not go anywhere -->
-                <a href="#" id="kppro" class = "active toggle"><img src ="symbols/kppro.svg"> Past Producer</a>
-                <a href="#" id="kp" class = "active toggle"><img src ="symbols/kp.svg"> Prospect</a>
-                <a href="#" id="ko" class = "active toggle"> <img src ="symbols/ko.svg">Occurrene</a>
+    <div class="Content" ng-app="index" ng-controller="AppCtrl" style="font-family: sans-serif">
+        <div class="Title">
+            <div class="logo">
+                <span style="color: black">Clay</span>
+                <span style="color: grey">Material Investigation</span>
             </div>
+        </div>
+
+        <!-- Container for both the dropdown menus and the popup info window -->
+        <div class = "nav" id="MainMenu">
+            <!-- Dropdown menus -->
+            <div class = "options" id="ClayType">
+                <div class="key">Click on a layer name below to show/hide</div>
+                <ul class="menu" id="Bentonite">
+                    <h3>Bentonite</h3>
+                    <li><a href = "#" id="bpro" class = "active toggle"><img src ="symbols/bpro.svg">Producer</a></li>
+                    <li><a href="#" id="bppro" class = "active toggle"> <img src ="symbols/bppro.svg">Past Producer</a></li>
+                    <li><a href="#" id="bp" class = "active toggle"><img src ="symbols/bp.svg">Prospect</a></li>
+                    <li><a href="#" id="bo" class = "active toggle"><img src ="symbols/bo.svg">Occurrene</a></li>
+                </ul>
+             <!-- Create a style to seperate the title and options, style for padding areas, and color change for hover and click, add simyble with different ids -->
+
+                <ul class="menu" id="Kaolin">
+                    <h3>Kaolin</h3>
+                    <!-- #: the anchor tag is a hyperlink, but does not go anywhere -->
+                    <li><a href = "#" id="kpro" class = "active toggle"><img src ="symbols/kpro.svg">Producer</a></li>
+                    <li><a href="#" id="kppro" class = "active toggle"><img src ="symbols/kppro.svg">Past Producer</a></li>
+                    <li><a href="#" id="kp" class = "active toggle"><img src ="symbols/kp.svg">Prospect</a></li>
+                    <li><a href="#" id="ko" class = "active toggle"> <img src ="symbols/ko.svg">Occurrene</a></li>
+                </ul>
+
+                <!-- A simple legend to show which layers are on and which are off -->
+                <ul class="menu key">
+                    <li><a href="#" class="active">Layer is shown</a></li>
+                    <li><a href="#">Layer is hidden</a></li>
+                </ul>
+            </div>
+
+            <!-- Popup information (text is added programmatically by index.js) -->
+            <div id ="InfoWindow"></div>
+        </div>
 
            <!--  <div class="arrow">
             <img src="img/arrows.png">
-            </div> -->
+        </div> -->
         <!-- <div id="Status">
             <div id="Status">All</div>
             <div class="arrow">
@@ -58,8 +75,8 @@
         
     </div>
     <div id="map-container">
-	<div id="map"></div>
-</div>
+     <div id="map"></div>
+ </div>
 </div>	
 
 </body>

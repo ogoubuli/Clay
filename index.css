@@ -35,10 +35,64 @@ p {
 }
 /*linke style*/
 
-#ClayType {
-	background-color: #3887be; 
-	color:#ffffff;
-	/*to make a padding area around the text, change color when clicked or hovered*/
+#MainMenu { 
+    background-color: rgba(255,255,255,0.5); /* semi-transparent white box */
+    padding: 15px; /* adds some space between the edge of the main menu container and the individual blue boxes within in */
+	position: absolute; /* so other objects on the page don't affect position of menu */
+	z-index: 1; /* make sure the menu is in front of the map */ 
+	right: 30px; /* 30 pixels from the righthand edge of the page */
+	top: 50px; /* 15 pixels from the top edge of the page */
+	width: 200px; /* Sets the width of the main menu box (otherwise the box would take on the width of the widest child element) */
 }
+
+#ClayType, #InfoWindow {		/* to give the same background and text color to the vertical dropdown menu box and the popup info window */
+	background-color: #3887be; 
+	color:#ffffff !important; /* forces font color of all text inside these boxes to be white */
+	padding: 10px; /* adds 10px of buffer space between menu box edge and text */
+}
+
+#InfoWindow {
+	margin-top: 15px; /* add some spacing between the vertical dropdown menu box and the popup info window */
+	font-size: smaller; /* make the text size smaller */
+}
+
+#InfoWindow div {
+	word-wrap: break-word; /* Breaks URL so it doesn't overflow the container */
+}
+
+#ClayType > .menu {
+	-webkit-padding-start: 0; /* this line and the next reset the spacing before the list items to 0 (some browsers will add some spacing by default) */
+	-webkit-margin-before: 0;
+}
+
+#ClayType > .menu > li { 
+	list-style-type: none; /* removes the bullet for the list item */
+	width: 100%;
+}
+
+#ClayType > .menu > li > a {
+	text-decoration: none; /* removes underline from menu link text */
+	color: white; /* makes menu link text white */
+	font-weight: lighter; /* makes the text weight lighter */
+	display: block; /* so the link looks like a "button" that takes up the whole width of the box (otherwise would be the width of the text) */
+	padding: 5px; /* give a little bit of space around the text in the "button" */
+	margin-bottom: 3px; /* give a little space between the "buttons" */
+	background-color: #1a5c8a; /* change the background color of the "button" */
+}
+
+#ClayType > .menu > li > a > img {
+	width: 15px; /* set a standard width for the icon */
+	padding-right: 5px; /* set a bit of space between the icon and the menu item text */
+	vertical-align: middle; /* align the image to the middle of the adjacent text */
+}
+
+#ClayType > .key { 
+	font-size: smaller;	/* make key text a bit smaller */
+}
+
+#ClayType > .menu > li > a:not(.active) {
+	opacity: 0.5; /* make hidden elements 50% transparent */
+}
+
 
 
