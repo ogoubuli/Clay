@@ -21,6 +21,10 @@ body {
 	color: black;
 	background-color: whitesmoke;
 }
+h3{
+    padding-bottom:5px;
+    margin:0px;
+}
 
 #pagetitle {
 	font-size: 18px;
@@ -39,13 +43,13 @@ p {
     background-color: rgba(255,255,255,0.5); /* semi-transparent white box */
     /*rgba, a as the transparent rate, similar commod as Opacity*/
    
-    padding: 15px; /* adds some space between the edge of the main menu container and the individual blue boxes within in */
+    padding: 5px; /* adds some space between the edge of the main menu container and the individual blue boxes within in */
     /*Padding is used for the objects contained inside, not the relationship between the container and the webwindow*/
 	
 	position: absolute; /* so other objects on the page don't affect position of menu */
 	z-index: 1; /* make sure the menu is in front of the map */ 
 	right: 30px; /* 30 pixels from the righthand edge of the page */
-	top: 50px; /* 15 pixels from the top edge of the page */
+	top: 30px; /* 15 pixels from the top edge of the page */
 	/*4 lines written above are all contributing to set the box in the place designated, z-index is commond I did not know before*/
 	
 	width: 200px; /* Sets the width of the main menu box (otherwise the box would take on the width of the widest child element) */
@@ -64,7 +68,7 @@ p {
 }
 
 #InfoWindow {
-	margin-top: 15px; /* add some spacing between the vertical dropdown menu box and the popup info window */
+	margin-top: 5px; /* add some spacing between the vertical dropdown menu box and the popup info window */
 	font-size: smaller; /* make the text size smaller */
 	/*another relative sizing commond*/
 }
@@ -87,7 +91,7 @@ p {
 	/*The bullet is a default setting of list style type*/
 	
 	width: 100%;
-	/*100% of the menu, can the width be 90% and then no padding needed in setting the style for maue?*/
+	/*100% of the menu*/
 }
 
 #ClayType > .menu > li > a {
@@ -103,8 +107,8 @@ p {
 	display: block; /* so the link looks like a "button" that takes up the whole width of the box (otherwise would be the width of the text) */
 	/*display property, block occupy the whole line*/
 
-	padding: 5px; /* give a little bit of space around the text in the "button" */
-	margin-bottom: 3px; /* give a little space between the "buttons" */
+	padding: 2px; /* give a little bit of space around the text in the "button" */
+	margin-bottom: 1px; /* give a little space between the "buttons" */
 	/*padding and margin: inside and outside*/
 	
 	background-color: #1a5c8a; /* change the background color of the "button" */
@@ -121,11 +125,29 @@ p {
 #ClayType > .key { 
 	/* # id selector, .class selector*/
 	font-size: smaller;	/* make key text a bit smaller */
+    
 }
+
+#ClayType > .key >li>.on {
+    display: inline-block;
+    float:left;
+}
+
+#ClayType > .key >li > .off{
+    list-style: none;
+    display: inline;
+    float: left;
+    padding-bottom: 10px
+}
+
 
 #ClayType > .menu > li > a:not(.active) {
 	/* a:not (.active) selectors :not(selector) selects every element that is not an active element */
 	opacity: 0.5; /* make hidden elements 50% transparent */
+}
+
+#ClayType >.menu > li > a:hover {
+    background-color: darkturquoise;
 }
 
 
