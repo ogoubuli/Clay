@@ -61,6 +61,8 @@ var toggleableLayerIds = [ 'bpro', 'bppro', 'bp', 'bo', 'kp', 'kppro', 'kpro', '
       } else {
         document.getElementById('InfoWindow').innerHTML = '<div>Hover over a point on the map to view information about it.</div>';
       }
+      //HTML DOM getElementById() Method, "String" as getting the string form from the Mapbox tile layers,
+      //innerHTML property, return value: a string, representing the HTML content of an element
 
 
       // WE DON'T NEED THIS IF YOU WANT THE TEXT TO GO IN THE INFO WINDOW. THIS WOULD ONLY BE FOR ADDING ACTUAL MAP POPUPS

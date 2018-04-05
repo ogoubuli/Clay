@@ -33,64 +33,98 @@ p {
 	line-height: 150%;
 	color: #666666;
 }
-/*linke style*/
+/*link style*/
 
 #MainMenu { 
     background-color: rgba(255,255,255,0.5); /* semi-transparent white box */
+    /*rgba, a as the transparent rate, similar commod as Opacity*/
+   
     padding: 15px; /* adds some space between the edge of the main menu container and the individual blue boxes within in */
+    /*Padding is used for the objects contained inside, not the relationship between the container and the webwindow*/
+	
 	position: absolute; /* so other objects on the page don't affect position of menu */
 	z-index: 1; /* make sure the menu is in front of the map */ 
 	right: 30px; /* 30 pixels from the righthand edge of the page */
 	top: 50px; /* 15 pixels from the top edge of the page */
+	/*4 lines written above are all contributing to set the box in the place designated, z-index is commond I did not know before*/
+	
 	width: 200px; /* Sets the width of the main menu box (otherwise the box would take on the width of the widest child element) */
-}
+	/*How can you calculate this? Just by trying different numbers or take measure of the wildest child element? I know the front option is aviliable in Chrome Console*/
+} 
+
+
 
 #ClayType, #InfoWindow {		/* to give the same background and text color to the vertical dropdown menu box and the popup info window */
 	background-color: #3887be; 
 	color:#ffffff !important; /* forces font color of all text inside these boxes to be white */
+	/*The commond like 'important','strong' is a relative idea to the overall setting, to make the text bold, */
+	
 	padding: 10px; /* adds 10px of buffer space between menu box edge and text */
+	/*Padding is an option to add space aroud in all directions, padding-top, padding-bottom is more suitable for the situation?*/
 }
 
 #InfoWindow {
 	margin-top: 15px; /* add some spacing between the vertical dropdown menu box and the popup info window */
 	font-size: smaller; /* make the text size smaller */
+	/*another relative sizing commond*/
 }
 
 #InfoWindow div {
 	word-wrap: break-word; /* Breaks URL so it doesn't overflow the container */
+	/*What if the URL is clikable?*/
 }
 
 #ClayType > .menu {
+	/* symble '>' used to assign nested styles, sequences*/
+	
 	-webkit-padding-start: 0; /* this line and the next reset the spacing before the list items to 0 (some browsers will add some spacing by default) */
 	-webkit-margin-before: 0;
+	/*transition for differnt browers, to remove the default setting of some browsers.*/
 }
 
 #ClayType > .menu > li { 
 	list-style-type: none; /* removes the bullet for the list item */
+	/*The bullet is a default setting of list style type*/
+	
 	width: 100%;
+	/*100% of the menu, can the width be 90% and then no padding needed in setting the style for maue?*/
 }
 
 #ClayType > .menu > li > a {
 	text-decoration: none; /* removes underline from menu link text */
+	/*I do not know that the link is a text decoration property that can be removed*/
+
 	color: white; /* makes menu link text white */
+	/*color already assigned above, is it a reinforcement or what priority will the machine read if the color here is different?*/
+
 	font-weight: lighter; /* makes the text weight lighter */
+	/*difference between font-weight and font-size: weight is about more or less bold, size is about the hight*/
+
 	display: block; /* so the link looks like a "button" that takes up the whole width of the box (otherwise would be the width of the text) */
+	/*display property, block occupy the whole line*/
+
 	padding: 5px; /* give a little bit of space around the text in the "button" */
 	margin-bottom: 3px; /* give a little space between the "buttons" */
+	/*padding and margin: inside and outside*/
+	
 	background-color: #1a5c8a; /* change the background color of the "button" */
 }
 
 #ClayType > .menu > li > a > img {
 	width: 15px; /* set a standard width for the icon */
+	/*if the icons have differnt width, the change might affect the quality of the icon, also depends on the resolution of screens*/
+	
 	padding-right: 5px; /* set a bit of space between the icon and the menu item text */
 	vertical-align: middle; /* align the image to the middle of the adjacent text */
 }
 
 #ClayType > .key { 
+	/* # id selector, .class selector*/
 	font-size: smaller;	/* make key text a bit smaller */
 }
 
 #ClayType > .menu > li > a:not(.active) {
+	/* a:not (.active) selectors :not(selector) selects every element that is not an active element */
 	opacity: 0.5; /* make hidden elements 50% transparent */
 }
 
